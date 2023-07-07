@@ -4,9 +4,6 @@ $email = htmlspecialchars(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAI
 $password = htmlspecialchars(trim(filter_input(INPUT_POST, 'password')));
 
 $error = $error1 = null;
-$errors = [
-
-];
 $user = new Users();
 
 if (isset($_POST['submit'])) {
@@ -26,12 +23,8 @@ if (isset($_POST['submit'])) {
 
 if (isset($_POST['submit'])) {
   $validation = new UserValidator($_POST);
-
-   //echo "<pre>"; print_r($validation->data); die;
-   $email = $validation->data["email"] ?? null;
-   $password = $validation->data["password"] ?? null;
-
   $errors = $validation->validateForm();
+  // echo "<pre>"; print_r($errors); die;
 }
 ?>
 
@@ -72,12 +65,12 @@ if (isset($_POST['submit'])) {
               <h4 class="h4 mb-3">Sign In</h4>
             </div>
             <form class="sign-in-form px-lg-5" action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
-              <?php echo isset($err) ? $err : null; ?>
+              <!-- <?php echo isset($err) ? $err : null; ?> -->
               <div class="form-group">
                 <input type="email" class="form-control mb-3 py-2" name="email" placeholder="name@example.com"
-                  id="exampleInputEmail1" aria-describedby="emailHelp" value = "<?php echo $email; ?>" />
+                  id="exampleInputEmail1" aria-describedby="emailHelp" />
                 <div class="error">
-                  <?php echo $errors["email"] ? "<p class='alert alert-danger' role='alert'>$errors[email]</p>" : ""; ?>
+                  <?php echo $errors['email'] ?? ''; ?>
                 </div>
                 <!-- <?php if ($error == true) {
                         echo "<p class='alert alert-danger' role='alert'> Invalid Email </p>";
@@ -85,9 +78,9 @@ if (isset($_POST['submit'])) {
               </div>
               <div class="form-group">
                 <input type="password" class="form-control mb-3 py-2" name="password" placeholder="Enter your password"
-                  id="exampleInputPassword1" value = "<?php echo $password ?>" />
+                  id="exampleInputPassword1" />
                   <div class="error">
-                  <?php echo $errors["password"] ? "<p class='alert alert-danger' role='alert'>{$errors["password"]}</p>" : ""; ?>
+                  <?php echo $errors['password'] ?? ''; ?>
                 </div>
                 <!-- <?php if ($error1 == true) {
                   echo "<p class='alert alert-danger' role='alert'> Invalid Password </p>";
