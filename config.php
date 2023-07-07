@@ -100,7 +100,7 @@ class UserValidator
     if (empty($val)) {
       $this->addError('password', '*Password cannot be empty');
     } 
-    if (strlen($val) < 8 || strlen($val) > 20) {
+    elseif (strlen($val) < 8 || strlen($val) > 20) {
       $this->addError('password', '*Password must be less than 8 characters');
     }
   }
