@@ -1,9 +1,16 @@
 <?php
 include_once("./config.php");
-$email = htmlspecialchars(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $password = htmlspecialchars(trim(filter_input(INPUT_POST, 'password')));
 
+if (isset($_SESSION["id"])) {
+  header("Location: ./dashboard.php");
+}
+
+
+
 $error = $error1 = null;
+
 $user = new Users();
 
 if (isset($_POST['submit'])) {
@@ -15,16 +22,23 @@ if (isset($_POST['submit'])) {
   }
   $getData = $user->loginData($_POST);
   if ($getData) {
-    header("Location: ./dashboard.php");
+    // header("Location: ./dashboard.php");
   } else {
     $err = "<p class='alert alert-danger' role='alert'>Incorrect Email or Password </p>";
   }
 }
-
+$emailErr = "";
+$validatePassword = "";
 if (isset($_POST['submit'])) {
   $validation = new UserValidator($_POST);
   $errors = $validation->validateForm();
-  // echo "<pre>"; print_r($errors); die;
+  $validation->login($user, $validation->data);
+
+  $validateEmail = $errors['email'] ?? '';
+  $emailErr = "<p class='alert alert-danger'> $validateEmail </p>";
+  $validatePassword = $errors['password'] ?? '';
+  $invalidErr = $errors['invalid'] ?? '';
+  var_dump($invalidErr);
 }
 ?>
 
@@ -64,13 +78,14 @@ if (isset($_POST['submit'])) {
               <h2 class="h4 mb-3">Welcome Back!</h2>
               <h4 class="h4 mb-3">Sign In</h4>
             </div>
-            <form class="sign-in-form px-lg-5" action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
+            <form class="sign-in-form px-lg-5" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+              <?php echo $invalidErr ?? ''; ?>
               <!-- <?php echo isset($err) ? $err : null; ?> -->
               <div class="form-group">
                 <input type="email" class="form-control mb-3 py-2" name="email" placeholder="name@example.com"
-                  id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $email; ?>" />
                 <div class="error">
-                  <?php echo $errors['email'] ?? ''; ?>
+                  <?php echo $emailErr ?>
                 </div>
                 <!-- <?php if ($error == true) {
                         echo "<p class='alert alert-danger' role='alert'> Invalid Email </p>";
@@ -78,13 +93,13 @@ if (isset($_POST['submit'])) {
               </div>
               <div class="form-group">
                 <input type="password" class="form-control mb-3 py-2" name="password" placeholder="Enter your password"
-                  id="exampleInputPassword1" />
-                  <div class="error">
-                  <?php echo $errors['password'] ?? ''; ?>
+                  id="exampleInputPassword1" value="<?php echo $password; ?>" />
+                <div class="error">
+                  <?php echo $validatePassword ?? ''; ?>
                 </div>
                 <!-- <?php if ($error1 == true) {
-                  echo "<p class='alert alert-danger' role='alert'> Invalid Password </p>";
-                } ?> -->
+                        echo "<p class='alert alert-danger' role='alert'> Invalid Password </p>";
+                      } ?> -->
               </div>
               <div class="forgot-password">
                 <h4 class="h5 text-end pb-2">Forgot password?</h4>

@@ -33,7 +33,6 @@ class Users
 
 class Session
 {
-
   public function __construct()
   {
     session_start();
@@ -87,8 +86,7 @@ class UserValidator
 
     if (empty($val)) {
       $this->addError('email', '*Email cannot be empty');
-    } 
-    elseif (!filter_var($val, FILTER_VALIDATE_EMAIL)) {
+    } elseif (!filter_var($val, FILTER_VALIDATE_EMAIL)) {
       $this->addError('email', '*Email must be a valid email');
     }
   }
@@ -99,15 +97,22 @@ class UserValidator
 
     if (empty($val)) {
       $this->addError('password', '*Password cannot be empty');
-    } 
-    elseif (strlen($val) < 8 || strlen($val) > 20) {
-      $this->addError('password', '*Password must be less than 8 characters');
+    } elseif (strlen($val) < 6 || strlen($val) > 20) {
+      $this->addError('password', '*Password must be more than 6 characters');
     }
   }
+
+  public function login($user, $data)
+  {
+    $response = $user->loginData($data);
+    var_dump($response);
+    if (!$response) {
+      $this->addError('invalid', '*Incorrect email and password');
+    }
+  }
+
   public function addError($key, $val)
   {
     $this->errors[$key] = $val;
   }
 }
-
-
