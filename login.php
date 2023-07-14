@@ -1,7 +1,6 @@
-<?php 
+<?php
 include("./config/app.php");
-
-
+$user->isLoggedIn();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ include("./config/app.php");
   <!-- Vendor CSS Files -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <!-- Template Main CSS File -->
-  <link href="  css/cs-style.css" rel="stylesheet" />
+  <link href="assets/css/cs-style.css" rel="stylesheet" />
 
   <!-- Template Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +32,7 @@ include("./config/app.php");
       <div class="container">
         <div class="row">
           <div class="col-lg-5 sign-in-image position-relative">
-            <img src="./images/auth.png" alt="" class="w-100" />
+            <img src="./assets/img/auth.png" alt="" class="w-100" />
           </div>
           <div class="col-lg-6 bg-white p-5 d-flex flex-column justify-content-center">
             <div class="sign-in-title text-center">
@@ -41,33 +40,12 @@ include("./config/app.php");
               <h4 class="h4 mb-3">Sign In</h4>
             </div>
             <form class="sign-in-form px-lg-5" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-            <!-- <?php
-            if(isset($errors)){
-              foreach($errors as $errors){
-                echo "<p class='alert alert-danger'> $errors </p>";
-              }
-            }
-            ?> -->
-              <!-- <?php echo $invalidErr ?? ''; ?> -->
-              <!-- <?php echo isset($err) ? $err : null; ?> -->
               <?php include("./message.php"); ?>
               <div class="form-group">
                 <input type="email" class="form-control mb-3 py-2" name="email" placeholder="name@example.com" id="exampleInputEmail1" aria-describedby="emailHelp" value="" />
-                <div class="error">
-                  <!-- <?php echo $validateEmail ?? ''; ?> -->
-                </div>
-                <!-- <?php if ($error == true) {
-                        echo "<p class='alert alert-danger' role='alert'> Invalid Email </p>";
-                      } ?> -->
               </div>
               <div class="form-group">
                 <input type="password" class="form-control mb-3 py-2" name="password" placeholder="Enter your password" id="exampleInputPassword1" value="" />
-                <div class="error">
-                  <!-- <?php echo $validatePassword ?? ''; ?> -->
-                </div>
-                <!-- <?php if ($error1 == true) {
-                        echo "<p class='alert alert-danger' role='alert'> Invalid Password </p>";
-                      } ?> -->
               </div>
               <div class="forgot-password">
                 <h4 class="h5 text-end pb-2">Forgot password?</h4>

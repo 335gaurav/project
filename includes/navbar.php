@@ -28,12 +28,12 @@
           <li class="nav-item dropdown pe-3">
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
               <img src="assets/img/shubhamdesigner.jpg" alt="Profile" class="rounded-circle" />
-              <span class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['user']['user_fname']; ?></span>
+              <span class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['user']['user_fname']." ".$_SESSION['user']['user_lname']; ?></span>
             </a>
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
               <li class="dropdown-header text-center">
-                <h6><?= $_SESSION['user']['user_fname']; ?></h6>
+                <h6><?= $_SESSION['user']['user_fname']." ".$_SESSION['user']['user_lname']; ?></h6>
                 <span><?= $_SESSION['user']['user_skills']; ?></span>
               </li>
               <li>
@@ -61,9 +61,3 @@
         </ul>
       </nav>
     </header>
-
-    <?php 
-    $_SESSION['authenticated'];
-    echo "<pre>";
-            print_r($_SESSION);
-            echo "</pre>";

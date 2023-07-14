@@ -33,8 +33,23 @@ class LoginController
       'user_fname' => $data['first_name'],
       'user_lname' => $data['last_name'],
       'user_email' => $data['email'],
+      'user_date' => $data['updated_at'],
+      'user_img' => $data['images'],
       'user_skills' => $data['skills']
     ];
+    echo "<pre>"; print_r($_SESSION['user']);
+  }
+
+  public function isLoggedIn()
+  {
+    if(isset($_SESSION['authenticated']) === true)
+    {
+      redirect("*You are Already Logged In", "dashborad.php");
+    }
+    else
+    {
+      return true;
+    }
   }
 
   public function logout()

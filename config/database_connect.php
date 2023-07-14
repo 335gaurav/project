@@ -10,7 +10,6 @@ class DatabaseConnect
     if (!$conn) {
       die("Database Connection Failed");
     }
-    echo "success";
     return $this->conn = $conn;
   }
 }
