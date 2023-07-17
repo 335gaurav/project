@@ -15,7 +15,7 @@ $user->isLoggedIn();
   <meta content="" name="keywords" />
 
   <!-- Vendor CSS Files -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
   <!-- Template Main CSS File -->
   <link href="assets/css/cs-style.css" rel="stylesheet" />
 

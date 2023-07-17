@@ -1,5 +1,5 @@
 
-<?php session_start(); ?>
+<!-- <?php session_start(); ?> -->
   <body>
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">

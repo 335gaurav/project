@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: #ECF0F4 !important;
 }
@@ -32,17 +36,17 @@ body {
 }
 
 .sign-in-form .form-control {
-  border: 1px solid #5F6261;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
   padding: 20px;
   font-size: 16px;
-  color: #5F6261;
+  color: rgba(0, 0, 0, 0.7019607843);
   border-radius: 3px;
   height: 50px;
   font-weight: 300;
 }
 
 .sign-in-title h4 {
-  color: #5F6261;
+  color: rgba(0, 0, 0, 0.7019607843);
 }
 
 .forgot-password h4 {
@@ -52,15 +56,17 @@ body {
 
 .headline p:before,
 p:after {
-  color: #5F6261;
+  color: rgba(107, 107, 107, 0.3411764706);
   content: "";
   flex: 1;
   border-bottom: groove 2px;
   margin: auto 0.25rem;
 }
 
-.sign-in-form .form-control:focus {
-  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+.sign-in-form .form-control:focus,
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.2);
 }
 
 .headline p {
@@ -70,7 +76,7 @@ p:after {
 .sign-in-google {
   width: 100%;
   max-width: 260px;
-  border: 1px solid #5F6261;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
   border-radius: 10px;
   margin: 0 auto;
   padding: 8px 0px;
@@ -79,13 +85,13 @@ p:after {
 
 .headline p {
   font-size: 12px;
-  color: #5F6261;
+  color: rgba(0, 0, 0, 0.7019607843);
 }
 
 .sign-in-google h3 {
   font-size: 16px;
   font-weight: 300;
-  color: #5F6261;
+  color: rgba(0, 0, 0, 0.7019607843);
   margin: 0px;
   padding-left: 15px;
 }
@@ -97,7 +103,6 @@ p:after {
 
 .header {
   transition: all 0.5s;
-  z-index: 997;
   height: 70px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
@@ -168,7 +173,7 @@ p:after {
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #5F6261;
+  scrollbar-color: rgba(107, 107, 107, 0.3411764706);
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
 }
@@ -202,7 +207,7 @@ p:after {
 .sidebar-nav .nav-heading {
   font-size: 15px;
   text-transform: capitalize;
-  color: #6b6b6b;
+  color: rgba(0, 0, 0, 0.7019607843);
   font-weight: 500;
   margin: 10px 0 5px 15px;
 }
@@ -212,7 +217,7 @@ p:after {
   align-items: center;
   font-size: 15px;
   font-weight: 300;
-  color: #000;
+  color: rgba(0, 0, 0, 0.7019607843);
   background: #fff;
   padding: 10px 15px;
   border-radius: 4px;
@@ -225,7 +230,7 @@ p:after {
 }
 
 .sidebar-nav .nav-link.collapsed i {
-  color: #6b6b6b;
+  color: rgba(0, 0, 0, 0.7019607843);
 }
 
 .sidebar-nav .nav-link:hover {
@@ -294,7 +299,7 @@ p:after {
   font-size: 22px;
   margin-bottom: 0;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.6509803922);
+  color: rgba(0, 0, 0, 0.7019607843);
 }
 
 .breadcrumb {
@@ -316,24 +321,18 @@ p:after {
 }
 
 .breadcrumb .active {
-  color: #6b6b6b;
+  color: rgba(0, 0, 0, 0.7019607843);
   font-weight: 400;
-}
-
-.Dashboard-Attendance-title h5 {
-  font-size: 20px;
-  font-weight: 300;
-  color: #000;
 }
 
 .punch-info .punch-hours {
   background-color: rgba(217, 217, 217, 0.38);
-  border: 2px solid rgba(107, 107, 107, 0.6196078431);
+  border: 2px solid rgba(107, 107, 107, 0.3411764706);
   font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: rgba(0, 0, 0, 0.7019607843);
   font-weight: 300;
   height: 120px;
   width: 120px;
@@ -352,28 +351,121 @@ p:after {
   max-width: 100%;
   padding: 8px 40px;
   border: none;
-  background-color: rgba(3, 69, 127, 0.6705882353);
+  background-color: rgba(3, 69, 127, 0.7);
   color: #fff;
   border-radius: 20px;
 }
 
 .Break-btn-section {
-  border: 1px solid #5F6261;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
   margin: 0 auto;
   width: 100%;
   max-width: 180px;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.5215686275);
+  color: rgba(0, 0, 0, 0.7019607843);
 }
 
-.cs-height {
+.recent-activity .res-activity-list {
   height: 330px;
-}
-
-.cs-height .table {
-  font-size: 14px;
-  height: 330px;
+  list-style-type: none;
+  overflow-y: auto;
+  position: relative;
   margin: 0;
+  padding: 0 0 0 30px;
+}
+
+.recent-activity .res-activity-list li {
+  margin: 0 0 15px;
+  position: relative;
+}
+
+.recent-activity p {
+  font-size: 15px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+
+.recent-activity .recent-activity .res-activity-time {
+  color: #bbb;
+  font-size: 12px;
+}
+
+.recent-activity .res-activity-list li:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(3, 69, 127, 0.7);
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 100%;
+  margin: 0 0 0 15px;
+  position: absolute;
+  top: 0;
+  left: -45px;
+}
+
+.recent-activity .res-activity-list:after {
+  content: "";
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+}
+
+.recent-activity .res-activity-time {
+  color: #bbb;
+  font-size: 12px;
+}
+
+.recent-activity .card-title-color h5 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cs-spacing .table th {
+  white-space: nowrap;
+  padding: 1rem 0.75rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 18px;
+}
+
+.cs-spacing .table td {
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.cs-spacing .css-Present-color {
+  border: 1px solid forestgreen;
+  width: 100%;
+  margin: 0 auto;
+  color: green;
+  max-width: 100px;
+}
+
+.cs-spacing .css-absent-color {
+  border: 1px solid red;
+  width: 100%;
+  margin: 0 auto;
+  color: red;
+  max-width: 100px;
+}
+
+.cs-search-spacing .btn {
+  width: 100%;
+  background-color: rgba(3, 69, 127, 0.7);
+}
+
+.cs-search-spacing .btn:active {
+  background-color: rgba(3, 69, 127, 0.7);
 }
 
 /* ************Dashboard page End********** */
@@ -381,14 +473,18 @@ p:after {
 .Attendance-some-changes table .table-heading-color-change {
   font-size: 14px;
   text-align: left;
-  color: #000;
+  color: rgba(0, 0, 0, 0.7019607843);
   font-weight: 300;
 }
 
 .Attendance-some-changes th {
-  font-size: 12px;
-  color: #000;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7019607843);
   font-weight: 500;
+  text-align: center;
+}
+
+.Attendance-some-changes td {
   text-align: center;
 }
 
@@ -399,22 +495,31 @@ p:after {
 .Attendance-some-changes td .bi-check-circle {
   color: #0E9243;
   font-size: 18px;
+  cursor: pointer;
+}
+
+.Attendance-some-changes td .bi-calendar-week-fill {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .Attendance-some-changes td .bi-x-circle {
   color: #FF0A0A;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .search-bar input {
-  border: 1px solid rgba(107, 107, 107, 0.5215686275);
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
   max-width: 180px;
   font-size: 15px;
 }
 
 .search-bar button {
-  border: 1px solid rgba(107, 107, 107, 0.5215686275);
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
   color: rgba(0, 0, 0, 0.3882352941);
+  background-color: transparent;
 }
 
 .search-bar input:focus-visible {
@@ -422,9 +527,480 @@ p:after {
 }
 
 /* ************Attendance End******************* */
+/* ************Leaves Admin Start******************* */
+.Add-leave button {
+  border: none;
+  background-color: rgba(3, 69, 127, 0.7);
+  border-radius: 4px;
+  color: #fff;
+  padding: 3px 0px;
+}
+
+.Leave-changes .table-Leave-change {
+  font-size: 14px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 500;
+}
+
+.Leave-changes .bi-three-dots-vertical {
+  font-size: 18px;
+}
+
+.Leave-changes th {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 500;
+  border: none;
+  text-align: center;
+}
+
+.Leave-changes td {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 400;
+  text-align: center;
+}
+
+.margin-left {
+  margin-left: -4px;
+}
+
+.cs-btn-leave button {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  padding: 2px 16px;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.Leave-changes table {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+}
+
+.dataTables_length label {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 300;
+}
+
+.form-select {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  color: rgba(0, 0, 0, 0.7019607843);
+  background-color: transparent;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.myProjectTable_filter input:focus-visible {
+  outline: 0;
+}
+
+.form-select-sm {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: rgba(0, 0, 0, 0.7019607843);
+  padding-left: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+
+.form-control-search {
+  display: inline-block;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  width: auto;
+  max-width: 150px;
+}
+
+.pagination-changes .page-link {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.7019607843);
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+}
+
+.pagination-changes .page-link:focus {
+  box-shadow: none;
+}
+
+.pagination-changes .pagination .page-link {
+  border-radius: 3px;
+}
+
+.showing-entries-leaves h4 {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+
+/* ************Leaves Admin End******************* */
+/* ************employees page Start******************* */
+.employee-stats-info {
+  background-color: #ffffff;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  text-align: center;
+  border-radius: 4px;
+  margin: 0 0 20px;
+  padding: 40px;
+}
+
+.employee-stats-info h6 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+
+.employee-stats-info h4 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.modal-form-employee-changes input,
+textarea {
+  border-radius: 4px;
+  width: 100%;
+  padding: 6px 12px 6px 12px;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 14px;
+}
+
+.modal-form-employee-changes .form-select {
+  border-radius: 4px;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+
+.modal-form-employee-changes label {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.modal-form-employee-changes input,
+textarea:focus-visible {
+  outline: none;
+}
+
+/* ************employees page End******************* */
+/* ************Create Task page start******************* */
+.tasks-changes img {
+  max-height: 32px;
+}
+
+.tasks-changes .table-Task-change {
+  font-size: 14px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 500;
+}
+
+.tasks-changes table {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+}
+
+.tasks-changes th {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 500;
+  border: none;
+  text-align: center;
+}
+
+.tasks-changes td {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-weight: 400;
+  text-align: center;
+}
+
+.avatar-sm {
+  width: 32px;
+}
+
+.avatar {
+  position: relative;
+  width: 24px;
+  white-space: nowrap;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.tasks-changes ul {
+  margin: 0;
+}
+
+.cs-btn-task button {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  padding: 2px 16px;
+  background-color: rgba(95, 98, 97, 0.231372549);
+  border-radius: 4px;
+}
+
+.tasks-changes .working-color {
+  background-color: rgba(14, 146, 67, 0.4117647059);
+  color: #0E9243;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 120px;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.tasks-changes .completed-color {
+  background-color: rgba(28, 165, 220, 0.3215686275);
+  color: #1CA5DC;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 120px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.tasks-changes .pending-color {
+  background-color: rgba(255, 10, 10, 0.3411764706);
+  color: #FF0A0A;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 120px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+/* ************Create Task page end******************* */
+/* ************Create Task-details page start******************* */
+.form-details-check label {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+
+.form-details-check input {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  background-color: rgba(95, 98, 97, 0.4);
+}
+
+.task-details-data h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #5F6261;
+}
+
+.task-details-data {
+  border-bottom: 1px solid rgba(107, 107, 107, 0.3411764706);
+  padding-bottom: 10px;
+}
+
+.task-details-data h5 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.task-details-data img {
+  max-height: 35px;
+}
+
+.task-detail-last h4 {
+  font-size: 16px;
+  font-weight: 300;
+  color: #5F6261;
+}
+
+.task-detail-last h6 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.task-detail-last p {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+/* ************Create Task-details page end******************* */
+/* ************User-form start******************* */
+.form-group input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0.375rem 1.25rem 0.375rem 0.55rem;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  color: rgba(0, 0, 0, 0.62);
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.dragBox {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  font-weight: 300;
+  padding: 20px 0px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  border: 2px dashed rgba(107, 107, 107, 0.3411764706);
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.dragBox input[type=file] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+.dragBox i {
+  display: block;
+  font-size: 35px;
+}
+
+.dragBox a {
+  text-decoration: none;
+  display: block;
+  color: rgba(0, 0, 0, 0.7019607843);
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px;
+  max-width: 180px;
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+}
+
+#disabled {
+  background-color: rgba(95, 98, 97, 0.231372549);
+  border-radius: 5px;
+}
+
+.userform-btn button {
+  border: none;
+  background-color: rgba(3, 69, 127, 0.7);
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 60px;
+}
+
+.userform-btn button:hover {
+  background-color: rgba(3, 69, 127, 0.58);
+}
+
+/* ************User-form end******************* */
+/* ************Profile-page start******************* */
+.user-profile-box img {
+  max-width: 35px;
+}
+
+.profile-icon i {
+  display: inline-block;
+  background: rgba(14, 146, 67, 0.2509803922);
+  color: #15a362;
+  width: 50px;
+  height: 50px;
+  padding-top: 2px;
+  font-size: 30px;
+}
+
+.profile-icon h4 {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7019607843);
+}
+
+.user-profile-box {
+  background-color: #F0F4FC;
+  height: 100%;
+}
+
+.user-profile-box h6 {
+  border: 1px solid rgba(107, 107, 107, 0.3411764706);
+  padding: 7px 15px;
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+}
+
+.user-profile-box h5 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.cs-border-bottom {
+  border-bottom: 1px solid rgba(107, 107, 107, 0.3411764706);
+  padding-bottom: 20px;
+}
+
+.border-bottom-last h4 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+}
+
+.cs-border-bottom h4 {
+  color: rgba(0, 0, 0, 0.7019607843);
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 992px) {
   .signin-section {
     height: 100% !important;
+  }
+  .Leave-changes table,
+  .tasks-changes table {
+    border: 0;
+  }
+  .Leave-changes table thead,
+  .tasks-changes table thead {
+    border: none;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .Leave-changes table tr,
+  .tasks-changes table tr {
+    display: block;
+    margin-bottom: 10px;
+    border-style: none;
+  }
+  .Leave-changes td,
+  .Leave-changes .table-Leave-change,
+  .tasks-changes table td,
+  .tasks-changes table .table-Task-change {
+    text-align: justify;
+    border: 1px solid rgba(107, 107, 107, 0.3411764706);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .Leave-changes table td::before,
+  .tasks-changes table td::before {
+    content: attr(data-label);
+    float: left;
+    text-transform: capitalize;
+  }
+  .tasks-changes .completed-color,
+  .tasks-changes .pending-color,
+  .tasks-changes .working-color {
+    margin: 0;
   }
 }
 @media (max-width: 1199px) {
@@ -457,4 +1033,5 @@ p:after {
   .toggle-sidebar .sidebar {
     left: -300px;
   }
-} /*# sourceMappingURL=cs-style.css.map */
+}
+/*# sourceMappingURL=cs-style.css.map */
