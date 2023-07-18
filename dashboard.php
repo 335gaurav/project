@@ -1,34 +1,36 @@
 <?php
 
-// include("./controllers/authenticationController.php");
-include("./controllers/attendanceController.php");
-
-// $authenticate->checkIsLoggedin();
-// session_start();
-
-
 include("./includes/header.php");
+// include("./controllers/attendanceController.php");
 include("./includes/navbar.php");
 
-$obj = new attendanceController();
+// $obj = new attendanceController();
 
-// include("./includes/asidebar.php");
+// // include("./includes/asidebar.php");
 // echo "<pre>"; var_dump($_SESSION); echo "</pre>";
-if(isset($_POST['punch-btn'])){
-echo "<pre>"; var_dump($_POST); echo "</pre>";
-  $obj->insertAttendance($user_id);
-}
 
-$userAttendance = $obj->getUserAttendance($_SESSION['user']['user_id']);
-// echo "<pre>"; var_dump($userAttendance[1]["punch_out"]); echo "</pre>";
-if($userAttendance){
-  if(end($userAttendance)["punch_out"] === NULL){
-    $isPunched = true;
-  }
-}else{
-  $isPunched = false;
-}
+// $userAttendance = $obj->getUserAttendance($_SESSION['user']['user_id']);
+// // echo "<pre>"; var_dump($userAttendance[1]["punch_out"]); echo "</pre>";
+// if($userAttendance){
+//   if(end($userAttendance)["punch_out"] === NULL){
+//     $isPunched = true;
+//   }else{
+//     $isPunched = false;
+//   }
+// }else{
+//   $isPunched = false;
+// }
+// echo "<pre>"; var_dump($userAttendance); echo "</pre>";
 
+// if(isset($_POST['punch-btn'])){
+//   if($isPunched){
+//   $obj->updateAttendance(end($userAttendance)["id"]);
+//   $isPunched = false;
+//   } else {
+//     $obj->insertAttendance($_SESSION['user']['user_id']);
+//     $isPunched = true;
+//   }
+// }
 
 
 ?>
@@ -52,11 +54,11 @@ if($userAttendance){
               <div class="card-body">
                 <h5 class="card-title mb-3 mt-2">
                   Timesheet
-                  <small class="text-muted">11 Mar 2019</small>
+                  <small class="text-muted" id="date"></small>
                 </h5>
                 <div class="punch-info py-4">
                   <div class="punch-hours">
-                    <span>3.45 hrs</span>
+                    <span id="clock"></span>
                   </div>
                 </div>
                 <div class="punch-btn-section">
@@ -193,7 +195,50 @@ if($userAttendance){
         </div>
       </section>
     </main>
+    <script>
 
+      function updateTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        // Add leading zeros if needed
+        hours = (hours < 10 ? "0" : "") + hours;
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        var currentTime = hours + ":" + minutes + ":" + seconds;
+
+        document.getElementById("clock").textContent = currentTime;
+      }
+
+      // Call updateTime() initially to avoid delay
+      updateTime();
+
+      // Refresh time every second
+      setInterval(updateTime, 1000);
+
+      function displayDate() {
+        var currentDate = new Date(); // creates a new Date object
+
+        // Extracting the date components
+        var day = currentDate.getDate();
+        var month = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
+        var year = currentDate.getFullYear();
+
+        // Adding leading zeros if necessary
+        month = month < 10 ? "0" + month : month;
+        day = day < 10 ? "0" + day : day;
+
+        // Displaying the date
+        var dateString = day + "/" + month + "/" + year;
+        document.getElementById("date").innerHTML = dateString;
+      }
+
+      // Updating the date every second (1000 milliseconds)
+      setInterval(displayDate);
+    </script>
 <!-- Vendor JS Files -->
 <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
