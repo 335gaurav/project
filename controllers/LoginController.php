@@ -1,5 +1,5 @@
 <?php
-// include("./config/app.php"); 
+include_once("./config/app.php");
 
 class LoginController
 {
@@ -37,32 +37,15 @@ class LoginController
       'user_img' => $data['images'],
       'user_skills' => $data['skills']
     ];
-    echo "<pre>"; print_r($_SESSION['user']);
+    // echo "<pre>"; print_r($_SESSION['user']);
   }
 
   public function isLoggedIn()
   {
-    if(isset($_SESSION['authenticated']) === true)
-    {
+    if (isset($_SESSION['authenticated']) === true) {
       redirect("*You are Already Logged In", "dashborad.php");
-    }
-    else
-    {
+    } else {
       return true;
-    }
-  }
-
-  public function logout()
-  {
-    if(isset($_SESSION['authenticated']) === true)
-    {
-      unset($_SESSION['authenticated']);
-      unset($_SESSION['user']);
-      return true;
-    }
-    else
-    {
-      return false;
     }
   }
 }

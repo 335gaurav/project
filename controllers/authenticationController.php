@@ -24,8 +24,6 @@ class authenticationController
       return true;
     }
   }
-
 }
 
-
-$authenticate = new AuthenticationController;
+$authenticate = new authenticationController();
