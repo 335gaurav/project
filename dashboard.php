@@ -1,8 +1,8 @@
 <?php
 
 include("./includes/header.php");
-// include("./includes/navbar.php");
-// include("./includes/asidebar.php");
+include("./includes/navbar.php");
+include("./includes/asidebar.php");
 include("./controllers/attendanceController.php");
 
 $obj = new attendanceController();
