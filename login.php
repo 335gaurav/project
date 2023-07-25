@@ -1,8 +1,3 @@
-<?php
-include("./config/app.php");
-$user->isLoggedIn();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +34,7 @@ $user->isLoggedIn();
               <h2 class="h4 mb-3">Welcome Back!</h2>
               <h4 class="h4 mb-3">Sign In</h4>
             </div>
-            <form class="sign-in-form px-lg-5" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+            <form class="sign-in-form px-lg-5" action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
               <?php include("./message.php"); ?>
               <div class="form-group">
                 <input type="email" class="form-control mb-3 py-2" name="email" placeholder="name@example.com" id="exampleInputEmail1" aria-describedby="emailHelp" value="" />
