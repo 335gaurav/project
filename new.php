@@ -1,6 +1,4 @@
 <?php
-
-
 class WorkSchedule {
     private $startHour;
     private $endHour;
